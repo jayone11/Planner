@@ -36,24 +36,30 @@ body {
 }
 
 .header p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     letter-spacing: 1px;
     padding: .5em;
 }
+
 .date {
-    font-size: 1rem;
+    font-size: 1.75rem;
     font-weight: 800;
     padding: 1em;
 }
 
 hr {
     margin: 0;
-    border: dimgray 5px solid;
+    border: rgb(173, 173, 173) 5px solid;
 }
+
+
 
 .section {
     padding: 0 7em;
     font-size: 1.5rem;
+    /* -webkit-box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25);  */
+    /* box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25); */
+    
 }
 
 .planner {
@@ -61,8 +67,8 @@ hr {
     padding-top: .5em;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    -webkit-box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25); 
-    box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25);
+    /* -webkit-box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25);  */
+    /* box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25); */
     z-index: -9999;
 }
 
@@ -77,6 +83,7 @@ hr {
 .time {
     flex-grow: 1;
     background-color: lavender;
+    min-width: 25%;
 
 }
 
@@ -96,13 +103,13 @@ input {
     border: none;
 }
 
-.delete-button {
-    padding: .75rem;
+.save-button {
+    padding: .75rem 1.5rem;
     border-radius: 15px;
     background-color: rgb(77, 154, 248);
     color: #fff;
 }
-.delete-button:hover {
+.save-button:hover {
     background-color: lightskyblue;
 }
 
