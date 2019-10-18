@@ -92,6 +92,10 @@ hr {
     border-bottom-right-radius: 25px;
 }
 
+input {
+    border: none;
+}
+
 .delete-button {
     padding: .75rem;
     border-radius: 15px;
