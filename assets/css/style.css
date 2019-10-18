@@ -19,7 +19,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3em;
+    padding: 4em 3em;
     background-color: azure;
 }
 
@@ -32,15 +32,56 @@ img {
 .header p {
     font-size: 1.25rem;
     letter-spacing: 1px;
+    padding: .5em;
+}
+.date {
+    font-size: 1rem;
+    padding: 1em;
 }
 
-
+hr {
+    margin: 0;
+    border: dimgray 5px solid;
+}
 
 .section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 2em;
-    background-color: beige;
+    /* background-color: beige; */
+}
 
+.planner {
+    display: flex;
+}
+
+.plannerItems {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.time {
+    flex-grow: 1;
+    background-color: lavender;
+
+}
+
+.activity {
+    flex-grow: 9;
+    background-color: floralwhite;
+}
+
+.action {
+    flex-grow: 1;
+    background-color: honeydew;
+}
+
+.delete-button {
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgb(77, 154, 248);
+    color: #fff;
+}
+.delete-button:hover {
+    background-color: lightskyblue;
 }

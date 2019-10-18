@@ -12,9 +12,17 @@
     <header class="header">
         <h1>Work Day Planner</h1>
         <p>Organize your day with this planner</p>
+        <span class="date" id="date"></span>
     </header>
+    <hr>
     <section class="section">
-        <div id="planner" class="planner"></div>
+        <div id="planner" class="planner">
+            <div class="plannerItems time" id="time">Time</div>
+            <div class="plannerItems activity" id="activity">Activity</div>
+            <div class="plannerItems action" id="action">
+                <button class="delete-button" id="button">Delete</button>
+            </div>
+        </div>
     </section>
     <script src="assets/js/script.js"></script>
 </body>
