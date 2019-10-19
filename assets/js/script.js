@@ -77,11 +77,11 @@ function generateRow() {
         }
         $('.output').text(activity);
         }
-    
+    renderLastActivity();
     }
 }
 generateRow();
-renderLastActivity()
+
 });
 // Save events for each hour of the day.
 // $('.activity').val().append()
