@@ -67,8 +67,6 @@ hr {
     padding-top: .5em;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    /* -webkit-box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25);  */
-    /* box-shadow: 12px 29px 33px -4px rgba(0,0,0,0.25); */
     z-index: -9999;
 }
 
@@ -77,13 +75,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .time {
     flex-grow: 1;
     background-color: lavender;
-    min-width: 25%;
+    min-width: 20%;
 
 }
 
@@ -111,6 +108,16 @@ input {
 }
 .save-button:hover {
     background-color: lightskyblue;
+}
+
+.delete-button {
+    padding: .75rem 1.5rem;
+    border-radius: 15px;
+    background-color: red;
+    color: #fff;
+}
+.delete-button:hover {
+    background-color: rgb(251, 106, 106);
 }
 
 .footer {
