@@ -133,7 +133,7 @@ input {
 }
 
 .present {
-    background-color: rgb(255, 148, 148);
+    background-color: rgb(245, 201, 131);
     color: white;
     cursor: pointer;
 }

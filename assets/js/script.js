@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    const planner = document.getElementById("planner");
-
+    // const planner = document.getElementById("planner");
     // Display current day near top of container
     function displayTodaysDate() {
         const newDate = moment().format('MMMM Do YYYY')
@@ -8,7 +7,6 @@ $(document).ready(function() {
         console.log(newDate);    
     }
     displayTodaysDate();
-
     // Create dynamic elements
     // Display standard business hours 9am to 5pm.
     // Each time slot is one hour.
@@ -17,21 +15,28 @@ $(document).ready(function() {
     // Each slot contains the time, user input field, and save button.
     // Dynamically updated HTML and CSS powered by jQuery.
     // for (i = 0; i < hoursInDay.length; i++) {
-    for (var hour = 0; hour < 24; hour++) {
+    for (var hour = 9; hour < 18; hour++) {
         hoursInDay.push(moment({
             hour
         }).format('h:mm  a'));
-        $('.section').append(`<div id="planner" class="planner" data-time=${hour}>
-                <div class="plannerItems time" data-time=${hour}>
+        $('.section').append(`<div class="planner" data-time="${hour}">
+               <!-- Hours Column -->
+                <div class="plannerItems time">
                     <p>${moment({hour}).format('h:mm  a')}</p>
                 </div>  
-                <div class= "description" data-time=${hour}>  
-                <textarea class="plannerItems activity" placeholder="Enter activity here"></textarea>
+                
+                <!-- User input text area -->
+                <div class="description">  
+                <textarea class="textArea plannerItems activity"></textarea>
                 </div>
-                <div class="plannerItems action" id="action" data-time=${hour}>
-                    <button class="save-button" id="save-button" data-time=${hour}>Save</button>
+
+                <!-- Save Button -->
+                <div class="plannerItems action" id="action">
+                    <button class="save-button" id="save-button">Save</button>
                 </div>
             </div>`);
+
+
         // // Create Planner div.
         // let plannerDiv = $('<div>');
         // plannerDiv.addClass('planner');
@@ -103,7 +108,7 @@ $(document).ready(function() {
 
     var m = moment();
     $.each($(".planner"), function (index, value) {
-        let dateHour = $(this).attr("data-time");
+        let dateHour = $(value).attr("data-time");
         if (Number(dateHour) === m.hour()) {
             $(this).find("textarea").addClass('present');
         } else if (Number(dateHour) < m.hour()) {
@@ -117,9 +122,9 @@ $(document).ready(function() {
     let timeObject = {};
         if (localStorage.getItem('timeObject')) {
         timeObject = JSON.parse(localStorage.getItem('timeObject'));
-    } else {
+    }else{
         timeObject = {
-            '9': { time: "9", value: ""},
+            '9':{ time: "9", value: ""},
             '10':{ time: "10", value: ""},
             '11':{ time: "11", value: ""},
             '12':{ time: "12", value: ""},
@@ -130,19 +135,21 @@ $(document).ready(function() {
             '17':{ time: "17", value: ""}
         };
     }
-    $("textarea").each(function(){
+    console.log(timeObject);
+    $(".planner").each(function(){
         console.log(this)
-        $(this).val(timeObject[$(this).attr("data-time")].value);
-        console.log(this)
+        $(this).find(".textArea").val(timeObject[$(this).attr("data-time")].value);
+        // $(this).find(".textArea").val(timeObject[$(this).attr("data-time")].value);
+        // console.log(this)
    });
 
-    $(document).on('click', '.save-button', function(event){
-        var data = $(this).attr("data-time") 
-        console.log('alert' + data);
-        var timeValue = $(this).attr("data-time");
-        var textValue = $(".planner").find(".textArea").val();
+    $('.save-button').on('click', function(event){
+        // var data = $(this).attr("data-time") 
+        // console.log('alert' + data);
+        var timeValue = $(this).closest(".planner").attr("data-time");
+        var textValue = $(this).closest(".planner").find(".textArea").val();
         timeObject[timeValue].value = textValue;
-   
+        // console.log(timeObject);
       localStorage.setItem('timeObject', JSON.stringify(timeObject));
   });
 
