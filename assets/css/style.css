@@ -86,7 +86,8 @@ hr {
 
 .activity {
     flex-grow: 9;
-    background-color: floralwhite;
+    /* background-color: floralwhite; */
+    /* background: transparent; */
 }
 
 .action {
@@ -96,8 +97,13 @@ hr {
     border-bottom-right-radius: 25px;
 }
 
-input {
+textarea {
     border: none;
+    color: lightgrey;
+}
+
+input {
+    color: lightgrey;
 }
 
 .save-button {
@@ -113,11 +119,30 @@ input {
 .delete-button {
     padding: .75rem 1.5rem;
     border-radius: 15px;
-    background-color: red;
+    background-color: rgb(255, 148, 148);
     color: #fff;
 }
 .delete-button:hover {
     background-color: rgb(251, 106, 106);
+}
+
+.past {
+    background-color: rgb(235, 229, 229);
+    color: black;
+    cursor: pointer;
+}
+
+.present {
+    background-color: rgb(255, 148, 148);
+    color: white;
+    cursor: pointer;
+}
+
+.future {
+    background-color: rgb(121, 200, 138);
+    color: white;
+    cursor: text;
+    cursor: pointer;
 }
 
 .footer {
